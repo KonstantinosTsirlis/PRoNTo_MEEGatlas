@@ -43,32 +43,32 @@ This repository contains a few function to address the aforementioned issues!
 
    These 2 functions should be copy-pasted in the main SPM folder, overwriting the original function.
 
-  2. The new PRoNTo function [`prt_create_meegAtlas.m`](prt_create_meegAtlas.m)  can create the required "M/EEG atlas" by specifying as input the sets of channels, time windows, and frequency bands to consider. See help for further details on how to use it:
+2. The new PRoNTo function [`prt_create_meegAtlas.m`](prt_create_meegAtlas.m)  can create the required "M/EEG atlas" by specifying as input the sets of channels, time windows, and frequency bands to consider. See help for further details on how to use it
 
-   ````
-   % FORMAT
-   % [Vout,fn_labels] = prt_create_meegAtlas(Vin,fn_out, blocks,labels,dorder)
-   % 
-   % INPUT
-   % Vin       : header information (see 'spm_vol') of one typical data image
-   % fn_out    : base name for the generated files, atlas & labels
-   % blocks    : structure defining the way data are blocked per channels,
-   %             time-window and frequency-band.
-   %   .chans  : [Ncg x 1] cell array of channels grouping, each cell contains
-   %             the list of channels to group together.
-   %             Shortcuts, use 0 for all channels together, i.e. one group,
-   %             and 1 for each channel separately, i.e. Nch groups.
-   %   .twind  : [Ntw x 2] array with time-window boundaries
-   %   .fband  : [Nfb x 2] array with frequency-band boundaries
-   % labels    : structure with the corresponding labels for channels,
-   %             time-windows, and frequency-bands. If not provided, then
-   %             labels will be built based on the index of channel group,
-   %             time-window, freq-band.
-   %   .chans  \
-   %   .twind  | cell array with labels.
-   %   .fband  /
-   % dorder    : ordering of the data as a string made of 'c' -> channels,
-   %             'f' -> frequency, 't' -> time. Default 'cft'.
-   ````
+  ````
+% FORMAT
+% [Vout,fn_labels] = prt_create_meegAtlas(Vin,fn_out, blocks,labels,dorder)
+% 
+% INPUT
+% Vin       : header information (see 'spm_vol') of one typical data image
+% fn_out    : base name for the generated files, atlas & labels
+% blocks    : structure defining the way data are blocked per channels,
+%             time-window and frequency-band.
+%   .chans  : [Ncg x 1] cell array of channels grouping, each cell contains
+%             the list of channels to group together.
+%             Shortcuts, use 0 for all channels together, i.e. one group,
+%             and 1 for each channel separately, i.e. Nch groups.
+%   .twind  : [Ntw x 2] array with time-window boundaries
+%   .fband  : [Nfb x 2] array with frequency-band boundaries
+% labels    : structure with the corresponding labels for channels,
+%             time-windows, and frequency-bands. If not provided, then
+%             labels will be built based on the index of channel group,
+%             time-window, freq-band.
+%   .chans  \
+%   .twind  | cell array with labels.
+%   .fband  /
+% dorder    : ordering of the data as a string made of 'c' -> channels,
+%             'f' -> frequency, 't' -> time. Default 'cft'.
+  ````
 
-Finally the small script [`cp_scr_meegAtlas.m](cp_scr_meegAtlas.m) just demonstrates how the function can be used to generate the M/EEG atlas on example data.
+Finally the small script [`cp_scr_meegAtlas.m`](cp_scr_meegAtlas.m) just demonstrates how the function can be used to generate the M/EEG atlas on example data.
