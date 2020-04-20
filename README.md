@@ -42,6 +42,7 @@ This repository contains a few function to address the aforementioned issues!
    ````
 
    These 2 functions should be copy-pasted in the main SPM folder, overwriting the original function.
+   Make sure you do that every time you update to a new SPM version, since they will be replaced by the original ones.
 
 2. The new PRoNTo function [`prt_create_meegAtlas.m`](prt_create_meegAtlas.m)  can create the required "M/EEG atlas" by specifying as input the sets of channels, time windows, and frequency bands to consider. See help for further details on how to use it
 
